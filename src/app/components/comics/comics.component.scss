@@ -1,3 +1,5 @@
+@import "../../../colors";
+
 // Small Screens
 @media screen and (max-width: 600px) {
     .image-container {
@@ -62,4 +64,11 @@ img {
     .issue-name {
         margin-left: 4px;
     }
+}
+.issue-tag-new::after {
+    content: "new!";
+    color: $text-alert;
+    font-weight: 400;
+    margin-left: .5rem;
+    text-decoration: none !important;
 }

@@ -21,7 +21,8 @@
     <ul class="other-issues-list">
         <li *ngFor="let issue of issues">
             <a class="issues-link" [routerLink]="['/', 'comics', issue.issue_number]" routerLinkActive="active">
-                <span class="issue-number">{{issue.issue_number}} –</span><span class="issue-name">{{issue.issue_title}}</span>
+                <span class="issue-number">{{issue.issue_number}} –</span><span class="issue-name main-link-area">{{issue.issue_title}}</span>
+                <span class="issue-tag-new" *ngIf="issue.is_new"></span>
             </a>
         </li>
     </ul>
