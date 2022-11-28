@@ -1,1 +1,40 @@
-/* You can add global styles to this file, and also import other style files */
+@import "colors";
+
+@media screen and (max-width: 924px) {
+    body, p, a {
+        font-size: 14px;
+    }
+}
+body {
+    margin: 0;
+    padding: 0;
+    background: $bg-color;
+    color: $text-color;
+    font-family: 'Nunito', 'Avenir', sans-serif;
+    font-weight: 500;
+}
+a, a:visited {
+    font-weight: 700;
+    color: $link-color;
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+        color: $link-hover;
+    }
+}
+.main-title {
+    &:hover {
+        text-decoration: none;
+    }
+}
+.wrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+h1,h2,h3 {
+    font-family: 'Indie Flower', sans-serif;
+    color: #000;
+}

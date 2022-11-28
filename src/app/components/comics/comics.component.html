@@ -1,0 +1,28 @@
+<div class="image-container">
+    <div *ngIf="imageToShow && !imageLoading">
+        <img [src]="imageToShow" />
+    </div>
+</div>
+<div class="gallery-navigator">
+    <span>
+        <a class="gallery-buttons" *ngIf="prevIssue" [routerLink]="['/', 'comics', prevIssue?.issue_number]">
+            <i class="fa-solid fa-caret-left"></i> {{ prevIssue?.issue_number }}
+        </a>
+    </span>
+    <h2 class="issue-title">{{ currentIssue.issue_number }} – {{ currentIssue.issue_title }}</h2>
+    <span>
+        <a class="gallery-buttons" *ngIf="nextIssue" [routerLink]="['/', 'comics', nextIssue?.issue_number]">
+            {{ nextIssue?.issue_number }} <i class="fa-solid fa-caret-right"></i>
+        </a>
+    </span>
+</div>
+<div>
+    <h3 class="other-issues">Other Issues</h3>
+    <ul class="other-issues-list">
+        <li *ngFor="let issue of issues">
+            <a class="issues-link" [routerLink]="['/', 'comics', issue.issue_number]" routerLinkActive="active">
+                <span class="issue-number">{{issue.issue_number}} –</span><span class="issue-name">{{issue.issue_title}}</span>
+            </a>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,36 @@
+<div class="contact-container contact-main" *ngIf="messageService.messageStatus===0">
+    <h2>Got something to say?</h2>
+    <p>Great! Feel free to ask any questions or leave any comments below:</p>
+    <form name="contact" [formGroup]="messageForm">
+        <div class="input-holder-container">
+
+            <div class="input-holder">
+                <label for="name">Name: (optional)</label>
+                <input id="name" type="text" formControlName="name">
+            </div>
+
+            <div class="input-holder">
+                <label for="email">Email:</label>
+                <div class="form-valid-decorator">
+                    <input id="email" type="email" formControlName="email" email required>
+                </div>
+            </div>
+
+        </div>
+        <div>
+            <label for="message">Message:</label>
+            <textarea cols="30" rows="10" id="message" formControlName="message" required></textarea>
+        </div>
+        <button [ngClass]="{'disabled': messageForm.invalid}" [disabled]="messageForm.invalid" (click)="submitMessage()">Submit</button>
+    </form>
+</div>
+<div class="contact-container contact-success" *ngIf="messageService.messageStatus===1">
+    <h2>Success!</h2>
+    <p>Your message has been sent. You should have a confirmation in your inbox.</p>
+    <p>In the meantime you can still <a [routerLink]="['/', 'comics']">look at comics.</a></p>
+</div>
+<div class="contact-container contact-error" *ngIf="messageService.messageStatus===2">
+    <h2>Oops...</h2>
+    <p>Something isn't working on our end. Please try checking the site at another time.</p>
+    <p>In the meantime you can still <a [routerLink]="['/', 'comics']">look at comics.</a></p>
+</div>

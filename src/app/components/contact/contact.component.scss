@@ -1,0 +1,63 @@
+@import "../../../colors";
+
+@media screen and (min-width: 600px) {
+    .contact-container {
+        width: 60%;
+        margin: auto;
+    }
+}
+label {
+    display: block;
+    font-size: .9rem;
+    font-weight: 700;
+    margin-top: .5rem;
+}
+input, textarea {
+    border-radius: 6px;
+    border: solid 1px $text-color;
+    &:focus {
+        outline: solid 1px $link-color;
+    }
+}
+textarea {
+    width: 100%;
+}
+input {
+    padding: .5rem;
+    width: calc(100% - 1rem);
+}
+button {
+    &.disabled {
+        background-color:  $link-disabled;
+        cursor: not-allowed;
+        &:hover {
+            background-color: $link-disabled !important;
+        }
+        color: #999;
+    }
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    padding: 1rem;
+    margin-top: 1rem;
+    width: 100%;
+    background-color: $link-color;
+    &:hover {
+        background-color: $link-hover;
+    }
+}
+
+.input-holder-container{
+    // display: flex;
+    // justify-items: stretch;
+    width: 100%;
+    .input-holder {
+        width: 100%;
+    }
+}
+
+.invalid::before {
+    font-family: "Font Awesome 6 Free";
+    content: "\f57a";
+}

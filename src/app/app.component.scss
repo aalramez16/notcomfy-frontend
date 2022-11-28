@@ -1,0 +1,63 @@
+// Small Screens
+@media screen and (max-width: 924px) {
+
+}
+// Big Screens
+@media screen and (min-width: 925px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    h2, .issue-title {
+        font-size: 1.75rem;
+    }
+    header {
+        text-align: center;
+        h1 {
+            padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+        }
+    }
+}
+
+header {
+    text-align: center;
+    h1 {
+        margin: 0;
+    }
+    .navigation-container {
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            li {
+                display: inline-flex;
+                padding: 0 1rem;
+
+            }
+        }
+    }
+}
+main {
+    padding: 0;
+    width: calc(100% - 4rem);
+    max-width: calc(100vh - 4rem);
+    margin: auto;
+}
+footer {
+    text-align: center;
+    font-weight: lighter;
+    font-size: smaller;
+    margin-top: 2rem;
+    font-weight: 700;
+}
+.social-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    li {
+        display: inline-flex;
+        padding: 0 1rem;
+    }
+}
+.fa-brands {
+    font-size: 2rem;
+}

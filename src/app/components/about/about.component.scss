@@ -1,0 +1,44 @@
+@media screen and (max-width: 924px) {
+    .about-me, .about-the-comics {
+        align-items: center;
+    }
+    .about-me {
+        flex-direction: column;
+    }
+    .about-the-comics {
+        flex-direction: column-reverse;
+    }
+    h2 {
+        margin-bottom: 0;
+    }
+}
+@media screen and (min-width: 925px) {
+    .about-me, .about-the-comics {
+        padding: 1rem;
+        align-items: center;
+    }
+    .about-me {
+        .about-image {
+            margin-right: 1.5rem;
+        }
+    }
+    .about-the-comics{
+        .about-image {
+            margin-left: 1.5rem;
+            margin-right: 1rem;
+        }
+    }
+}
+.about-me, .about-the-comics {
+    display: flex;
+    width: 100%;
+    .about-image {
+        width: 250px;
+        height: 250px;
+    }
+    .about-copy {
+        width: 100%;
+        padding: 1rem;
+        line-height: 2rem;
+    }
+}
