@@ -8,13 +8,15 @@ import { ComicsComponent } from './components/comics/comics.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PrivacyComponent } from './components/privacy/privacy.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ComicsComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    PrivacyComponent
   ],
   imports: [
     BrowserModule,
