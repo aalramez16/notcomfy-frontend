@@ -12,16 +12,22 @@
             <div class="input-holder">
                 <label for="email">Email:</label>
                 <div class="form-valid-decorator">
-                    <input id="email" type="email" formControlName="email" email required>
+                    <input id="email" type="email" formControlName="email" placeholder="example@email.com" email required>
                 </div>
             </div>
 
         </div>
         <div>
             <label for="message">Message:</label>
-            <textarea cols="30" rows="10" id="message" formControlName="message" required></textarea>
+            <textarea cols="30" rows="10" id="message" formControlName="message" placeholder="Your message here" required></textarea>
         </div>
         <button [ngClass]="{'disabled': messageForm.invalid}" [disabled]="messageForm.invalid" (click)="submitMessage()">Submit</button>
+        <div class="form-warnings">
+            <span *ngIf="email.invalid && email.pristine">*Email field is required</span>
+            <span *ngIf="email.invalid && email.dirty">*Invalid email format</span>
+            <span *ngIf="message.invalid && message.pristine">*Message field is required</span>
+            <span *ngIf="message.invalid && message.dirty">*Your message needs to be at least 4 characters (this is very generous of me)</span>
+        </div>
     </form>
 </div>
 <div class="contact-container contact-success" *ngIf="messageService.messageStatus===1">

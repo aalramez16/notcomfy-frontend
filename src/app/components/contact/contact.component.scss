@@ -19,10 +19,7 @@ input, textarea {
         outline: solid 1px $link-color;
     }
 }
-textarea {
-    width: 100%;
-}
-input {
+input, textarea {
     padding: .5rem;
     width: calc(100% - 1rem);
 }
@@ -60,4 +57,14 @@ button {
 .invalid::before {
     font-family: "Font Awesome 6 Free";
     content: "\f57a";
+}
+
+.form-warnings {
+    color: $text-alert;
+    font-size: .9rem;
+    padding: .5rem;
+    span {
+        display: block;
+        padding: 0;
+    };
 }
