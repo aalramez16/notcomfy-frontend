@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { ComicsService } from 'src/app/services/comics.service';
 import { Title } from '@angular/platform-browser';
+import { environment } from 'src/environment/environtment';
 
 @Component({
   selector: 'app-comics',
@@ -70,7 +71,7 @@ export class ComicsComponent implements OnInit, OnDestroy {
   // Get image from the API
   getImageFromService(issue_number: string) {
     this.imageLoading = true;
-    this.comicsService.getImage(`http://localhost:3000/comics/${issue_number}`).subscribe({
+    this.comicsService.getImage(`${environment.apiUrl}/comics/${issue_number}`).subscribe({
       next: (data: any) => {
         this.createImageFromBlob(data);
         this.imageLoading = false;

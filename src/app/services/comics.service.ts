@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
+import { environment } from 'src/environment/environtment';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,7 @@ export class ComicsService {
   }
 
   getIssuesData(): Observable<object> {
-    return this.httpClient.get('http://localhost:3000/comics/');
+    return this.httpClient.get(`${environment.apiUrl}/comics/`);
   }
   
 }

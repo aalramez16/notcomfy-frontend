@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
+import { environment } from 'src/environment/environtment';
 
 export enum MESSAGE_STATUS {
   NOT_SENT,
@@ -19,7 +20,7 @@ export class MessageService {
 
   submitMessage(messagebody: any) {
     console.log(messagebody);
-    this.httpClient.post('http://localhost:3000/contact', messagebody).subscribe({
+    this.httpClient.post(`${environment.apiUrl}/contact`, messagebody).subscribe({
       next: (data) => {
         console.log(data);
         this.messageStatus = MESSAGE_STATUS.SENT_SUCCESS;
