@@ -19,10 +19,8 @@ export class MessageService {
   messageStatus: MESSAGE_STATUS = MESSAGE_STATUS.NOT_SENT;
 
   submitMessage(messagebody: any) {
-    console.log(messagebody);
     this.httpClient.post(`${environment.apiUrl}/contact`, messagebody).subscribe({
       next: (data) => {
-        console.log(data);
         this.messageStatus = MESSAGE_STATUS.SENT_SUCCESS;
       }, 
       error: (error) => {

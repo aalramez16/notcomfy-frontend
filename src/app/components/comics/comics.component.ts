@@ -100,7 +100,6 @@ export class ComicsComponent implements OnInit, OnDestroy {
     this.issues.forEach((issue: any) => {
       const releaseDate = DateTime.fromFormat(issue.release_date, 'yyyy-MM-dd');
       const today = DateTime.now();
-      console.log(today.diff(releaseDate, 'days').as('days'))
       if (today.diff(releaseDate, 'days').as('days') <= 7) {
         issue.is_new = true;
       }
