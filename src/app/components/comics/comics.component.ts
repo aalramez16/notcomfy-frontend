@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { ComicsService } from 'src/app/services/comics.service';
 import { Title } from '@angular/platform-browser';
-import { environment } from 'src/environment/environtment';
+import { environment } from 'src/environment/environment';
 import { DateTime } from 'luxon'
 
 @Component({
