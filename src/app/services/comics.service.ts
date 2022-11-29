@@ -14,6 +14,10 @@ export class ComicsService {
     return this.httpClient.get(url, { responseType: 'blob' });
   }
 
+  getImageAltText(url: string): Observable<object> {
+    return this.httpClient.get(url);
+  }
+
   getIssuesData(): Observable<object> {
     return this.httpClient.get(`${environment.apiUrl}/comics/`);
   }

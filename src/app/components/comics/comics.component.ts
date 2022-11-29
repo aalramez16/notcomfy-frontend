@@ -76,6 +76,14 @@ export class ComicsComponent implements OnInit, OnDestroy {
     this.comicsService.getImage(`${environment.apiUrl}/comics/${issue_number}`).subscribe({
       next: (data: any) => {
         this.createImageFromBlob(data);
+        this.comicsService.getImageAltText(`${environment.apiUrl}/comics/alt/${issue_number}`).subscribe({
+          next: (data: any) => {
+            this.currentIssue.alt = data;
+          },
+          error: (error) => {
+            this.currentIssue.alt = {text: 'alt text failed to load'}
+          }
+        })
         this.imageLoading = false;
       },
       error: (error) => {

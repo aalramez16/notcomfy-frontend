@@ -1,6 +1,6 @@
 <div class="image-container">
     <div *ngIf="imageToShow && !imageLoading">
-        <img [src]="imageToShow" />
+        <img [src]="imageToShow" [alt]="currentIssue.alt ? currentIssue.alt.text : ''" />
     </div>
 </div>
 <div class="gallery-navigator">
